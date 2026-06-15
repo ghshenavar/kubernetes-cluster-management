@@ -10,6 +10,8 @@ log() { echo "[$(date '+%H:%M:%S')] $*"  | systemd-cat -p info; }
 log "Configuring UFW..."
 ufw --force enable
 ufw allow 6443/tcp
+#for calico
+ufw allow 179
 log "UFW configured"
 
 # -- 2. Disable swap ------------------------------------
