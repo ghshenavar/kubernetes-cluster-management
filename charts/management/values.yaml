@@ -6,5 +6,3 @@ ingress-nginx:
 
 cert-manager:
   installCRDs: true
-  webhook:
-    enabled: false
