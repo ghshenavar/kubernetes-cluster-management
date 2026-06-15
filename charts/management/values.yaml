@@ -4,6 +4,3 @@ ingress-nginx:
     admissionWebhooks:
       enabled: false
 
-cert-manager:
-  crds:
-    enabled: true
