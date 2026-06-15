@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}
   annotations:
-    {{- toYaml .Values.ingress.annotations | nindent 4 }}
+    cert-manager.io/issuer: "selfsigned-issuer"
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   tls:
