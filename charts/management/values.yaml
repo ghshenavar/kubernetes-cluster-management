@@ -3,3 +3,6 @@ ingress-nginx:
     replicaCount: 1
     admissionWebhooks:
       enabled: false
+
+cert-manager:
+  installCRDs: true
