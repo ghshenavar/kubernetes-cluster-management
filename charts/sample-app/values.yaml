@@ -2,8 +2,7 @@ replicaCount: 1
 
 image:
   repository: nginx
-  tag: "latest"
-  pullPolicy: Always
+  tag: "stable"
 
 service:
   port: 80
