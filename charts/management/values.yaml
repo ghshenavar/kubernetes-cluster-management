@@ -5,4 +5,5 @@ ingress-nginx:
       enabled: false
 
 cert-manager:
-  installCRDs: true
+  crds:
+    enabled: true
