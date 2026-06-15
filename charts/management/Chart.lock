@@ -2,5 +2,8 @@ dependencies:
 - name: ingress-nginx
   repository: https://kubernetes.github.io/ingress-nginx
   version: 4.10.0
-digest: sha256:96b241c191555debdf534f58f978303b2c8dc013de89470d3c18bc452203f0c6
-generated: "2026-06-15T10:52:24.659461086Z"
+- name: cert-manager
+  repository: oci://quay.io/jetstack/charts
+  version: v1.20.2
+digest: sha256:4e5b6f917476d611b225e0a463a469d72f20c53b6eb7857e82f048de9a193ccf
+generated: "2026-06-15T16:24:03.110792073Z"
