@@ -15,5 +15,5 @@ log "ArgoCD ready"
 
 # ── 2. Apply management chart via ArgoCD ───────────────
 log "Applying management app..."
-kubectl apply -f management-argocd-bootstrap.yaml
+kubectl apply -f argocd.yaml
 log "Management app submitted to ArgoCD"
