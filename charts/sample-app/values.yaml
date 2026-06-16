@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: nginxdemos/hello
-  tag: plain-text
+  repository: docker/getting-started
+  tag: latest
 
 service:
   port: 80
