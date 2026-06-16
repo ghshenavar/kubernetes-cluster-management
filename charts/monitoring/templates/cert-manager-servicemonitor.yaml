@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cert-manager-metrics
+  namespace: default
+  labels:
+    release: my-app
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cert-manager
+      app.kubernetes.io/instance: my-app
+      app.kubernetes.io/component: controller
+  namespaceSelector:
+    matchNames:
+      - default
+  endpoints:
+    - port: tcp-prometheus-servicemonitor
+      interval: 30s
