@@ -5,6 +5,10 @@ ingress-nginx:
       type: NodePort
     admissionWebhooks:
       enabled: false
+    metrics:
+      enabled: true
+      service:
+        enabled: true
 
 metrics-server:
   replicas: 1
