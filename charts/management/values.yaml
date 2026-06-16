@@ -1,8 +1,10 @@
 ingress-nginx:
   controller:
     replicaCount: 1
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
     service:
-      type: NodePort
+      enabled: false
     admissionWebhooks:
       enabled: false
     metrics:
