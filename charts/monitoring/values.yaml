@@ -2,6 +2,10 @@ kube-prometheus-stack:
   crds:
     enabled: false
   grafana:
+    admin:
+      existingSecret: "my-app-grafana-admin"
+      userKey: "admin-user"
+      passwordKey: "admin-password"
     ingress:
       enabled: true
       ingressClassName: nginx
