@@ -15,7 +15,7 @@ In order to make sure crds are up and running, there is a separate argocd defini
 
 ## Reaching the Application
 
-The current deployment of the application is limited by its self-signed certificate and lack of a proxy running on the VM. The webpage is available at [https://example.example.com:32151/](url), with dns resolution of 
+The current deployment of the application is limited by its self-signed certificate. The webpage is available at [https://example.example.com/](url), with dns resolution of 
 ```
 86.38.238.174  example.example.com
 ```
