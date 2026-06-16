@@ -4,7 +4,7 @@ metadata:
   name: argocd-metrics
   namespace: argocd
   labels:
-    release: my-app
+    release: monitoring-app
 spec:
   selector:
     matchLabels:
