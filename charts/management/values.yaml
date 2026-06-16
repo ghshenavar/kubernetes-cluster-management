@@ -6,3 +6,9 @@ ingress-nginx:
     admissionWebhooks:
       enabled: false
 
+metrics-server:
+  args:
+    - --kubelet-insecure-tls
+    - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+
+
