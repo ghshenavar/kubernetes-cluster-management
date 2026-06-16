@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: "stable"
+  repository: nginxdemos/hello
+  tag: plain-text
 
 service:
   port: 80
