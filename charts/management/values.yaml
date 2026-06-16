@@ -7,7 +7,7 @@ ingress-nginx:
       enabled: false
 
 metrics-server:
-  enabled: true
+  replicas: 1
   args:
     - --kubelet-insecure-tls
     - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
