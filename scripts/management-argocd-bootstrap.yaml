@@ -15,6 +15,9 @@ spec:
     - repoURL: https://github.com/ghshenavar/kubernetes-cluster-management.git
       targetRevision: main
       path: charts/sample-app
+    - repoURL: https://github.com/ghshenavar/kubernetes-cluster-management.git
+      targetRevision: main
+      path: charts/monitoring
   destination:
     server: https://kubernetes.default.svc
     namespace: default
