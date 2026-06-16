@@ -20,3 +20,8 @@ kube-prometheus-stack:
         - secretName: grafana-tls
           hosts:
             - grafana.example.com
+  prometheus-node-exporter:
+    hostNetwork: true
+    hostPID: true
+    tolerations:
+      - operator: Exists
