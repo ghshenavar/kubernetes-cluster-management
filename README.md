@@ -15,7 +15,4 @@ In order to make sure crds are up and running, there is a separate argocd defini
 
 ## Reaching the Application
 
-The current deployment of the application is limited by its self-signed certificate. The webpage is available at [https://example.example.com/](https://example.example.com/), with dns resolution of 
-```
-86.38.238.174  example.example.com
-```
+The current deployment of the application is limited by its self-signed certificate. The webpage is available at [compute.verda.run domain](https://86.38.238.174.compute.verda.run/).
