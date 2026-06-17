@@ -9,7 +9,7 @@ service:
   targetPort: 80
 
 ingress:
-  host: example.example.com
+  host: 86.38.238.174.compute.verda.run
   className: nginx
   tls:
     secretName: quickstart-example-tls
