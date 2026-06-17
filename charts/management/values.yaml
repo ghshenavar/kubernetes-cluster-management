@@ -21,8 +21,8 @@ metrics-server:
 
   extraVolumeMounts:
     - name: kubelet-ca
-    mountPath: /etc/kubernetes/pki
-    readOnly: true
+      mountPath: /etc/kubernetes/pki
+      readOnly: true
   args:
     - --kubelet-certificate-authority=/etc/kubernetes/pki/ca.crt
     - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
