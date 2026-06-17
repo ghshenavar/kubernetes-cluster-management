@@ -14,6 +14,15 @@ ingress-nginx:
 
 metrics-server:
   replicas: 1
+  extraVolumes:
+  - name: kubelet-ca
+    secret:
+      secretName: kubelet-ca
+
+  extraVolumeMounts:
+    - name: kubelet-ca
+    mountPath: /etc/kubernetes/pki
+    readOnly: true
   args:
     - --kubelet-certificate-authority=/etc/kubernetes/pki/ca.crt
     - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
