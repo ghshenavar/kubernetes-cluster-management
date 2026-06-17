@@ -20,8 +20,47 @@ kube-prometheus-stack:
         - secretName: grafana-tls
           hosts:
             - grafana.example.com
+  prometheus:
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+
+      annotations:
+        cert-manager.io/issuer: selfsigned-issuer
+
+      hosts:
+        - prometheus.example.com
+
+      tls:
+        - secretName: prometheus-tls
+          hosts:
+            - prometheus.example.com
+
   prometheus-node-exporter:
     hostNetwork: true
     hostPID: true
     tolerations:
       - operator: Exists
+  prometheusRule:
+    additionalPrometheusRulesMap:
+      custom-alerts:
+        groups:
+          - name: custom-alerts
+            rules:
+              - alert: PodRestartingTooOften
+                expr: increase(kube_pod_container_status_restarts_total[10m]) > 5
+                for: 2m
+                labels:
+                  severity: warning
+                annotations:
+                  summary: "Pod is restarting too often"
+                  description: "Pod {{ $labels.pod }} in namespace {{ $labels.namespace }} restarted more than 5 times in 10 minutes."
+
+              - alert: HighNodeCPU
+                expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100) > 90
+                for: 5m
+                labels:
+                  severity: critical
+                annotations:
+                  summary: "High CPU usage on node"
+                  description: "Node {{ $labels.instance }} CPU usage has been above 90% for more than 5 minutes."
