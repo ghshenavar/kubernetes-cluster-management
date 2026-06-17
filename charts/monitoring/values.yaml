@@ -52,6 +52,7 @@ kube-prometheus-stack:
                 for: 2m
                 labels:
                   severity: warning
+                  release: monitoring-app
                 annotations:
                   summary: "Pod is restarting too often"
                   description: "Pod {{ $labels.pod }} in namespace {{ $labels.namespace }} restarted more than 5 times in 10 minutes."
@@ -61,6 +62,7 @@ kube-prometheus-stack:
                 for: 5m
                 labels:
                   severity: critical
+                  release: monitoring-app
                 annotations:
                   summary: "High CPU usage on node"
                   description: "Node {{ $labels.instance }} CPU usage has been above 90% for more than 5 minutes."
