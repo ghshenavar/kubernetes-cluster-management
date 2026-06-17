@@ -15,7 +15,6 @@ ingress-nginx:
 metrics-server:
   replicas: 1
   args:
-    - --kubelet-insecure-tls
     - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
 
 
