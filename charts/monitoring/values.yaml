@@ -35,15 +35,8 @@ kube-prometheus-stack:
         - secretName: prometheus-tls
           hosts:
             - prometheus.example.com
-
-  prometheus-node-exporter:
-    hostNetwork: true
-    hostPID: true
-    tolerations:
-      - operator: Exists
-  prometheusRule:
-    additionalPrometheusRulesMap:
-      custom-alerts:
+    additionalPrometheusRules:
+      - name: custom-alerts
         groups:
           - name: custom-alerts
             rules:
@@ -66,3 +59,8 @@ kube-prometheus-stack:
                 annotations:
                   summary: "High CPU usage on node"
                   description: "Node {{ $labels.instance }} CPU usage has been above 90% for more than 5 minutes."
+  prometheus-node-exporter:
+    hostNetwork: true
+    hostPID: true
+    tolerations:
+      - operator: Exists
