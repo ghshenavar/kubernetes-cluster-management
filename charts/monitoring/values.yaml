@@ -12,11 +12,17 @@ kube-prometheus-stack:
       annotations:
         cert-manager.io/issuer: selfsigned-issuer
       hosts:
-        - 86.38.238.174.compute.verda.run/grafana
+        - 86.38.238.174.compute.verda.run
+      path: /grafana
+      pathType: Prefix
       tls:
         - secretName: grafana-tls
           hosts:
             - 86.38.238.174.compute.verda.run/grafana
+    grafana.ini:
+      server:
+        root_url: 86.38.238.174.compute.verda.run/grafana
+        server_from_sub_path: true
   prometheus:
     ingress:
       enabled: true
@@ -24,11 +30,11 @@ kube-prometheus-stack:
       annotations:
         cert-manager.io/issuer: selfsigned-issuer
       hosts:
-        - 86.38.238.174.compute.verda.run/prometheus
+        - prometheus.example.com
       tls:
         - secretName: prometheus-tls
           hosts:
-            - 86.38.238.174.compute.verda.run/prometheus
+            - prometheus.example.com
   additionalPrometheusRules:
     - name: custom-alerts
       groups:
