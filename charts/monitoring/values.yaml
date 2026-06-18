@@ -18,11 +18,11 @@ kube-prometheus-stack:
       tls:
         - secretName: grafana-tls
           hosts:
-            - 86.38.238.174.compute.verda.run/grafana
+            - 86.38.238.174.compute.verda.run
     grafana.ini:
       server:
-        root_url: 86.38.238.174.compute.verda.run/grafana
-        server_from_sub_path: true
+        root_url: https://86.38.238.174.compute.verda.run/grafana
+        serve_from_sub_path: true
   prometheus:
     ingress:
       enabled: true
