@@ -12,11 +12,11 @@ kube-prometheus-stack:
       annotations:
         cert-manager.io/issuer: selfsigned-issuer
       hosts:
-        - grafana.example.com
+        - https://86.38.238.174.compute.verda.run/grafana
       tls:
         - secretName: grafana-tls
           hosts:
-            - grafana.example.com
+            - https://86.38.238.174.compute.verda.run/grafana
   prometheus:
     ingress:
       enabled: true
@@ -24,12 +24,11 @@ kube-prometheus-stack:
       annotations:
         cert-manager.io/issuer: selfsigned-issuer
       hosts:
-        - prometheus.example.com
+        - https://86.38.238.174.compute.verda.run/prometheus
       tls:
         - secretName: prometheus-tls
           hosts:
-            - prometheus.example.com
-  # <-- moved out of prometheus:, now a sibling key
+            - https://86.38.238.174.compute.verda.run/prometheus
   additionalPrometheusRules:
     - name: custom-alerts
       groups:
