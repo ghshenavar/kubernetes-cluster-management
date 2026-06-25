@@ -10,7 +10,7 @@ kube-prometheus-stack:
       enabled: true
       ingressClassName: nginx
       annotations:
-        cert-manager.io/issuer: selfsigned-issuer
+        cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
       hosts:
         - 86.38.238.174.compute.verda.run
       path: /grafana
@@ -28,7 +28,7 @@ kube-prometheus-stack:
       enabled: true
       ingressClassName: nginx
       annotations:
-        cert-manager.io/issuer: selfsigned-issuer
+        cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
       hosts:
         - prometheus.example.com
       tls:

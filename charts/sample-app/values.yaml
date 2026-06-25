@@ -14,4 +14,4 @@ ingress:
   tls:
     secretName: quickstart-example-tls
   annotations: 
-    cert-manager.io/issuer: "selfsigned-issuer"
+    cert-manager.io/cluster-issuer: "selfsigned-cluster-issuer"
